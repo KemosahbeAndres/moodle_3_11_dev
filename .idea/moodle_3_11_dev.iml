@@ -1,0 +1,480 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="WEB_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/admin/roles/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/admin/tool/analytics/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/admin/tool/availabilityconditions/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/admin/tool/behat/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/admin/tool/brickfield/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/admin/tool/capability/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/admin/tool/cohortroles/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/admin/tool/customlang/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/admin/tool/dataprivacy/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/admin/tool/filetypes/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/admin/tool/generator/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/admin/tool/health/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/admin/tool/httpsreplace/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/admin/tool/installaddon/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/admin/tool/langimport/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/admin/tool/licensemanager/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/admin/tool/log/store/database/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/admin/tool/log/store/legacy/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/admin/tool/log/store/standard/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/admin/tool/log/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/admin/tool/lp/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/admin/tool/lpimportcsv/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/admin/tool/lpmigrate/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/admin/tool/messageinbound/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/admin/tool/mobile/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/admin/tool/monitor/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/admin/tool/moodlenet/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/admin/tool/oauth2/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/admin/tool/policy/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/admin/tool/recyclebin/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/admin/tool/task/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/admin/tool/templatelibrary/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/admin/tool/uploadcourse/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/admin/tool/uploaduser/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/admin/tool/usertours/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/admin/tool/xmldb/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/analytics/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/auth/db/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/auth/email/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/auth/ldap/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/auth/manual/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/auth/mnet/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/auth/oauth2/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/auth/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/availability/condition/completion/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/availability/condition/date/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/availability/condition/grade/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/availability/condition/group/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/availability/condition/grouping/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/availability/condition/profile/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/availability/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/backup/controller/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/backup/converter/moodle1/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/backup/moodle2/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/backup/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/backup/util" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/badges/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/blocks/accessreview/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/blocks/activity_modules/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/blocks/activity_results/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/blocks/admin_bookmarks/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/blocks/badges/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/blocks/blog_menu/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/blocks/blog_recent/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/blocks/blog_tags/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/blocks/calendar_month/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/blocks/calendar_upcoming/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/blocks/comments/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/blocks/completionstatus/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/blocks/course_list/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/blocks/course_summary/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/blocks/glossary_random/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/blocks/html/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/blocks/login/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/blocks/mentees/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/blocks/myoverview/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/blocks/myprofile/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/blocks/navigation/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/blocks/news_items/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/blocks/online_users/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/blocks/private_files/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/blocks/recent_activity/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/blocks/recentlyaccessedcourses/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/blocks/recentlyaccesseditems/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/blocks/rss_client/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/blocks/search_forums/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/blocks/section_links/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/blocks/site_main_menu/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/blocks/social_activities/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/blocks/tag_flickr/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/blocks/tag_youtube/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/blocks/tags/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/blocks/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/blocks/timeline/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/blog/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/cache/stores/apcu/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/cache/stores/file/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/cache/stores/memcached/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/cache/stores/mongodb/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/cache/stores/redis/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/cache/stores/session/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/cache/stores/static/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/cache/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/calendar/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/cohort/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/comment/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/competency/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/completion/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/contentbank/contenttype/h5p/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/contentbank/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/course/format/singleactivity/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/course/format/social/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/course/format/topics/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/course/format/weeks/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/course/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/customfield/field/checkbox/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/customfield/field/date/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/customfield/field/select/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/customfield/field/text/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/customfield/field/textarea/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/customfield/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/dataformat/pdf/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/enrol/category/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/enrol/cohort/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/enrol/database/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/enrol/fee/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/enrol/flatfile/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/enrol/guest/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/enrol/imsenterprise/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/enrol/ldap/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/enrol/lti/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/enrol/manual/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/enrol/meta/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/enrol/paypal/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/enrol/self/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/enrol/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/favourites/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/files/converter/googledrive/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/files/converter/unoconv/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/files/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/filter/activitynames/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/filter/algebra/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/filter/data/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/filter/displayh5p/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/filter/emoticon/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/filter/glossary/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/filter/mathjaxloader/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/filter/mediaplugin/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/filter/multilang/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/filter/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/filter/tex/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/filter/urltolink/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/grade/export/ods/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/grade/export/txt/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/grade/export/xls/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/grade/export/xml/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/grade/grading/form/guide/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/grade/grading/form/rubric/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/grade/grading/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/grade/import/csv/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/grade/report/grader/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/grade/report/history/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/grade/report/overview/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/grade/report/singleview/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/grade/report/user/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/grade/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/group/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/h5p/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/iplookup/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/lib/antivirus/clamav/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/lib/behat/extension" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/lib/ddl/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/lib/dml/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/lib/editor/atto/plugins/accessibilitychecker/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/lib/editor/atto/plugins/accessibilityhelper/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/lib/editor/atto/plugins/align/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/lib/editor/atto/plugins/bold/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/lib/editor/atto/plugins/charmap/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/lib/editor/atto/plugins/clear/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/lib/editor/atto/plugins/collapse/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/lib/editor/atto/plugins/equation/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/lib/editor/atto/plugins/h5p/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/lib/editor/atto/plugins/html/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/lib/editor/atto/plugins/image/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/lib/editor/atto/plugins/indent/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/lib/editor/atto/plugins/italic/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/lib/editor/atto/plugins/link/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/lib/editor/atto/plugins/media/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/lib/editor/atto/plugins/orderedlist/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/lib/editor/atto/plugins/strike/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/lib/editor/atto/plugins/subscript/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/lib/editor/atto/plugins/superscript/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/lib/editor/atto/plugins/table/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/lib/editor/atto/plugins/title/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/lib/editor/atto/plugins/underline/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/lib/editor/atto/plugins/unorderedlist/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/lib/editor/atto/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/lib/editor/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/lib/editor/textarea/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/lib/editor/tinymce/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/lib/external/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/lib/filebrowser/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/lib/filestorage/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/lib/form/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/lib/grade/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/lib/mlbackend/python/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/lib/phpunit/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/lib/table/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/lib/testing/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/lib/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/lib/userkey/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/lib/xapi/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/login/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/media/player/html5audio/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/media/player/html5video/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/media/player/swf/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/media/player/videojs/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/media/player/vimeo/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/media/player/youtube/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/message/output/airnotifier/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/message/output/email/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/message/output/jabber/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/message/output/popup/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/message/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/mnet/service/enrol/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/mnet/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/mod/assign/feedback/comments/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/mod/assign/feedback/editpdf/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/mod/assign/feedback/file/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/mod/assign/submission/comments/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/mod/assign/submission/file/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/mod/assign/submission/onlinetext/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/mod/assign/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/mod/assignment/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/mod/book/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/mod/book/tool/exportimscp/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/mod/book/tool/importhtml/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/mod/book/tool/print/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/mod/chat/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/mod/choice/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/mod/data/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/mod/feedback/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/mod/folder/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/mod/forum/report/summary/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/mod/forum/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/mod/glossary/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/mod/h5pactivity/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/mod/imscp/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/mod/label/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/mod/lesson/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/mod/lti/service/gradebookservices/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/mod/lti/service/memberships/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/mod/lti/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/mod/page/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/mod/quiz/accessrule/delaybetweenattempts/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/mod/quiz/accessrule/ipaddress/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/mod/quiz/accessrule/numattempts/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/mod/quiz/accessrule/offlineattempts/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/mod/quiz/accessrule/openclosedate/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/mod/quiz/accessrule/password/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/mod/quiz/accessrule/seb/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/mod/quiz/accessrule/securewindow/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/mod/quiz/accessrule/timelimit/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/mod/quiz/report/grading/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/mod/quiz/report/overview/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/mod/quiz/report/responses/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/mod/quiz/report/statistics/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/mod/quiz/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/mod/resource/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/mod/scorm/report/basic/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/mod/scorm/report/interactions/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/mod/scorm/report/objectives/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/mod/scorm/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/mod/survey/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/mod/url/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/mod/wiki/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/mod/workshop/allocation/manual/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/mod/workshop/allocation/random/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/mod/workshop/allocation/scheduled/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/mod/workshop/eval/best/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/mod/workshop/form/accumulative/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/mod/workshop/form/comments/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/mod/workshop/form/numerrors/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/mod/workshop/form/rubric/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/mod/workshop/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/my/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/notes/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/payment/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/plagiarism/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/portfolio/boxnet/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/portfolio/flickr/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/portfolio/googledocs/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/portfolio/mahara/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/portfolio/picasa/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/portfolio/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/privacy/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/question/behaviour/adaptive/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/question/behaviour/adaptivenopenalty/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/question/behaviour/deferredcbm/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/question/behaviour/deferredfeedback/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/question/behaviour/immediatecbm/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/question/behaviour/immediatefeedback/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/question/behaviour/informationitem/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/question/behaviour/interactive/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/question/behaviour/interactivecountback/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/question/behaviour/manualgraded/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/question/behaviour/missing/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/question/engine/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/question/engine/upgrade/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/question/format/aiken/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/question/format/blackboard_six/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/question/format/examview/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/question/format/gift/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/question/format/missingword/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/question/format/multianswer/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/question/format/webct/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/question/format/xml/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/question/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/question/type/calculated/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/question/type/calculatedmulti/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/question/type/calculatedsimple/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/question/type/ddimageortext/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/question/type/ddmarker/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/question/type/ddwtos/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/question/type/description/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/question/type/essay/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/question/type/gapselect/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/question/type/match/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/question/type/missingtype/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/question/type/multianswer/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/question/type/multichoice/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/question/type/numerical/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/question/type/random/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/question/type/randomsamatch/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/question/type/shortanswer/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/question/type/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/question/type/truefalse/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/rating/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/report/competency/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/report/completion/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/report/configlog/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/report/eventlist/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/report/insights/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/report/log/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/report/loglive/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/report/outline/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/report/participation/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/report/progress/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/report/questioninstances/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/report/stats/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/report/usersessions/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/repository/boxnet/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/repository/contentbank/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/repository/coursefiles/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/repository/dropbox/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/repository/equella/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/repository/filesystem/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/repository/flickr/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/repository/flickr_public/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/repository/googledocs/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/repository/local/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/repository/merlot/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/repository/nextcloud/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/repository/onedrive/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/repository/picasa/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/repository/recent/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/repository/s3/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/repository/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/repository/upload/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/repository/url/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/repository/user/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/repository/webdav/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/repository/wikimedia/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/repository/youtube/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/rss/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/search/engine/simpledb/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/search/engine/solr/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/search/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/spec" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/tag/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/theme/boost/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/theme/classic/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/user/profile/field/checkbox/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/user/profile/field/datetime/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/user/profile/field/menu/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/user/profile/field/social/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/user/profile/field/text/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/user/profile/field/textarea/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/user/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/webservice/rest/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/webservice/soap/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/webservice/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/webservice/xmlrpc/tests" isTestSource="true" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/phpspec/prophecy" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/php-webdriver/webdriver" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/sebastian/type" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/sebastian/lines-of-code" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/phpdocumentor/type-resolver" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/ralouphie/getallheaders" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/sebastian/diff" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/phpdocumentor/reflection-docblock" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/sebastian/comparator" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/sebastian/object-enumerator" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/phpdocumentor/reflection-common" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/phar-io/version" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/theseer/tokenizer" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/sebastian/exporter" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/sebastian/code-unit" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/sebastian/version" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/phar-io/manifest" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/sebastian/cli-parser" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/sebastian/recursion-context" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/sebastian/complexity" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/sebastian/environment" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/sebastian/resource-operations" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/sebastian/code-unit-reverse-lookup" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/sebastian/global-state" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/friends-of-behat/mink-extension" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/sebastian/object-reflector" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/mikey179/vfsstream" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/nikic/php-parser" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/guzzlehttp/promises" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/guzzlehttp/guzzle" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/guzzlehttp/psr7" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/instantiator" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/deprecation-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-mbstring" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/css-selector" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-intl-grapheme" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/dependency-injection" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-intl-normalizer" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/config" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-php80" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/event-dispatcher-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-ctype" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/filesystem" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-php72" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-intl-idn" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-php73" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/event-dispatcher" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/console" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/browser-kit" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-php81" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/translation-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/dom-crawler" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/behat/transliterator" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/phpunit/php-code-coverage" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/string" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/behat/gherkin" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/service-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/behat/behat" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/phpunit/php-invoker" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/translation" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/behat/mink" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/phpunit/php-file-iterator" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/yaml" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/behat/mink-goutte-driver" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/phpunit/phpunit" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/behat/mink-browserkit-driver" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/phpunit/php-text-template" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/process" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/phpunit/php-timer" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/psr/event-dispatcher" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/psr/container" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/psr/http-message" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/myclabs/deep-copy" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/composer" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/oleg-andreyev/mink-phpwebdriver" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/webmozart/assert" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/fabpot/goutte" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

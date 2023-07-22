@@ -1,0 +1,80 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template block_sic/detalles
+
+
+    Example context (json):{
+
+    }
+}}
+
+{{< block_sic/layout}}
+    {{$ content}}
+        {{#student}}
+            <div class="card">
+                <div class="card-header">
+                    <h2>Estado del estudiante</h2>
+                </div>
+                <div class="card-body">
+                    <dl class="row">
+                        <div class="col-md-6">
+                            <dt>ID</dt>
+                            <dd>{{id}}</dd>
+                            <dt>Nombre</dt>
+                            <dd>{{name}}</dd>
+                            <dt>Rut</dt>
+                            <dd>{{rut}}</dd>
+                            <dt>Rol</dt>
+                            <dd>{{role}}</dd>
+                        </div>
+                        <div class="col-md-6">
+                            <dt>Estado</dt>
+                            <dd class="badge
+                            {{#studying}}badge-primary{{/studying}}
+                            {{#approved}}badge-success{{/approved}}
+                            {{#reproved}}badge-danger{{/reproved}}">
+                                {{state}}
+                            </dd>
+                            <dt>Avance</dt>
+                            <dd>{{progress}}%</dd>
+                            <dt>Tiempo conexion</dt>
+                            <dd>{{hours}} horas</dd>
+                            <dt>Promedio</dt>
+                            <dd>{{average}}</dd>
+                        </div>
+                    </dl>
+                    <hr>
+                    <h5>Selecciona un estado:</h5>
+                    <form action="{{confirm_change_stateurl}}" method="post" class="vstack gap-3">
+                        <input type="hidden" name="studentid" value="{{id}}">
+                        <select class="custom-select" name="statecode">
+                            <option value="0" selected>Por defecto</option>
+                            <option value="1">Cursando</option>
+                            <option value="2">Aprobado</option>
+                            <option value="3">Reprobado</option>
+                        </select>
+                        <div class="hstack hstack-sm gap-3">
+                            <input class="btn btn-outline-success" type="submit" value="Guardar">
+                            <a href="{{studentdetailurl}}&id={{id}}" class="btn btn-danger">Cancelar</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        {{/student}}
+    {{/ content}}
+{{/ block_sic/layout}}

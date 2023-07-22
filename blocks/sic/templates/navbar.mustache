@@ -1,0 +1,39 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template block_sic/dashboard
+
+
+    Example context (json):{
+
+    }
+}}
+<ul class="nav nav-pills nav-fill gap-2">
+    <li class="nav-item">
+        <a class="nav-link {{#coursepage}}active{{/coursepage}}" href="{{courseurl}}">Curso</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link {{#participantspage}}active{{/participantspage}}" href="{{participantsurl}}">Participantes</a>
+    </li>
+    {{#is_manager}}
+        <li class="nav-item ">
+            <a class="nav-link {{#sicpanelpage}}active{{/sicpanelpage}}" href="{{sicurl}}">SIC</a>
+        </li>
+    {{/is_manager}}
+</ul>
+
+

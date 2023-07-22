@@ -1,0 +1,55 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template block_sic/course/module/create
+
+    Example context (json):{
+
+    }
+}}
+
+{{< block_sic/layout}}
+    {{$ content}}
+        <div class="card">
+            <div class="card-header">
+                <h2>Borrando Clase (ID {{lesson.id}})</h2>
+            </div>
+            <div class="card-body">
+                <form class="vstack gap-3" action="{{confirm_delete_lessonurl}}&lessonid={{lesson.id}}" method="post">
+                    {{#lesson}}
+                        <input class="form-control" type="hidden" name="lessonid" value="{{id}}">
+                        <dl>
+                            <dt>ID</dt>
+                            <dd>{{id}}</dd>
+                            <dt>Codigo</dt>
+                            <dd>{{code}}</dd>
+                            <dt>Fecha</dt>
+                            <dd>{{date}}</dd>
+                            <dt>Duracion (minutos)</dt>
+                            <dd>{{duration}}</dd>
+                        </dl>
+                    {{/lesson}}
+
+                    <div class="hstack hstack-sm gap-3">
+                        <input type="submit" class="btn btn-outline-danger" value="Eliminar">
+                        <a class="btn btn-outline-primary" href="{{lessonsurl}}">Cancelar</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    {{/ content}}
+{{/ block_sic/layout}}

@@ -1,0 +1,144 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template block_sic/detalles
+
+
+    Example context (json):{
+
+    }
+}}
+
+{{< block_sic/layout}}
+    {{$ content}}
+        {{#section}}
+            <div class="card">
+                <div class="card-header hstack hstack-sm gap-3">
+                    <h2>Seccion {{name}}</h2>
+                    {{#is_manager}}
+                        {{#assigned}}
+                            <a class="btn btn-outline-warning" href="{{edit_sectionurl}}&id={{id}}">Reasignar</a>
+                        {{/assigned}}
+                        {{^assigned}}
+                            <a class="btn btn-outline-primary" href="{{edit_sectionurl}}&id={{id}}">Asignar</a>
+                        {{/assigned}}
+                    {{/is_manager}}
+                </div>
+                <div class="card-body">
+                    <dl class="row">
+                        <div class="col-md-6">
+                            <dt>ID</dt>
+                            <dd>{{id}}</dd>
+                            <dt>Nombre</dt>
+                            <dd>{{name}}</dd>
+                            <dt>Estado</dt>
+                            <dd>
+                                {{#assigned}}<span class="badge badge-success">asignada</span>{{/assigned}}
+                                {{^assigned}}<span class="badge badge-dark">sin asignar</span>{{/assigned}}
+                            </dd>
+                        </div>
+                        <div class="col-md-6">
+                            <dt>Actividades</dt>
+                            <dd>{{nactivities}}</dd>
+                            <dt>Clases</dt>
+                            <dd>{{nlessons}}</dd>
+                            <dt>Pertenece la modulo</dt>
+                            <dd>
+                                {{#module}}
+                                    {{module.code}} (ID {{module.id}})
+                                {{/module}}
+                                {{^module}}
+                                    Ninguno
+                                {{/module}}
+                            </dd>
+                        </div>
+                    </dl>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <h2>Actividades</h2>
+                </div>
+                <div class="card-body">
+                    <table class="table table-striped table-hover table-responsive-sm">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nombre</th>
+                                <th>Tipo</th>
+                                <th>Obligatoria</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#activities}}
+                                <tr>
+                                    <td>{{id}}</td>
+                                    <td>{{code}}</td>
+                                    <td>{{type}}</td>
+                                    <td>{{mandatory}}</td>
+                                </tr>
+                            {{/activities}}
+                        </tbody>
+                    </table>
+                    {{^activities}}
+                        <div class="alert alert-warning">No hay actividades en esta seccion!</div>
+                    {{/activities}}
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header hstack hstack-sm gap-3">
+                    <h2>Clases</h2>
+                    {{#manager}}
+                        <a href="{{create_lessonurl}}" class="btn btn-outline-primary">Nueva Clase</a>
+                    {{/manager}}
+                </div>
+                <div class="card-body">
+                    <table class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>Accion</th>
+                                <th>ID</th>
+                                <th>Nombre</th>
+                                <th>Fecha</th>
+                                <th>Duracion</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#lessons}}
+                                <tr>
+                                    <td>
+                                        {{#is_manager}}
+                                            <a href="{{edit_lessonurl}}&lessonid={{id}}" class="btn btn-outline-primary">Modificar</a>
+                                            <a href="{{delete_lessonurl}}&lessonid={{id}}" class="btn btn-outline-danger">Quitar</a>
+                                        {{/is_manager}}
+                                    </td>
+                                    <td>{{id}}</td>
+                                    <td>{{code}}</td>
+                                    <td>{{date}}</td>
+                                    <td>{{duration}} minutos</td>
+                                </tr>
+                            {{/lessons}}
+                        </tbody>
+                    </table>
+                    {{^lessons}}
+                        <div class="alert alert-warning">No hay clases en esta seccion!</div>
+                    {{/lessons}}
+                </div>
+            </div>
+        {{/section}}
+    {{/ content}}
+{{/ block_sic/layout}}

@@ -1,0 +1,57 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template block_sic/detalles
+
+
+    Example context (json):{
+
+    }
+}}
+
+{{< block_sic/layout}}
+    {{$ content}}
+        <div class="card">
+            <div class="card-header hstack hstack-sm gap-2">
+                <h2>Resumen de los datos</h2>
+                <a class="btn btn-outline-dark" href="{{sicurl}}">Volver Atras</a>
+                {{#is_manager}}
+                    <div class="dropdown">
+                        <a class="btn btn-outline-primary dropdown-toggle" id="downloadDropdownMenu" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                            Descargar
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="downloadDropdownMenu">
+                            <li><a class="dropdown-item disabled" href="#">Registro PDF (*.pdf)</a></li>
+                            <li><a class="dropdown-item" href="{{downloadurl}}" target="_blank">Registro JSON (*.json)</a></li>
+                        </ul>
+                    </div>
+                    <a class="btn btn-outline-success {{^ tokenvalid}}disabled{{/ tokenvalid}}" href="{{send_registerurl}}">Enviar Registros</a>
+                {{/is_manager}}
+            </div>
+            <div class="card-body">
+                <span data="{{json}}" id="jsondata"></span>
+                <pre id="formatted"></pre>
+                <script>
+                    let data = document.querySelector("#jsondata")
+                    let code = document.querySelector("#formatted")
+                    let obj = JSON.parse(data.getAttribute('data'))
+                    code.innerHTML = JSON.stringify(obj, null, 4)
+                </script>
+            </div>
+        </div>
+    {{/ content}}
+{{/ block_sic/layout}}

@@ -1,0 +1,106 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template block_sic/detalles
+
+
+    Example context (json):{
+
+    }
+}}
+
+{{< block_sic/layout}}
+    {{$ content}}
+        {{#student}}
+            <div class="card">
+                <div class="card-header">
+                    <h2>Detalles estudiante</h2>
+                </div>
+                <div class="card-body">
+                    <dl class="row">
+                        <div class="col-md-6">
+                            <dt>ID</dt>
+                            <dd>{{id}}</dd>
+                            <dt>Nombre</dt>
+                            <dd>{{name}}</dd>
+                            <dt>Rut</dt>
+                            <dd>{{rut}}</dd>
+                            <dt>Rol</dt>
+                            <dd>{{role}}</dd>
+                        </div>
+                        <div class="col-md-6">
+                            <dt>Estado</dt>
+                            <dd class="badge
+                            {{#studying}}badge-primary{{/studying}}
+                            {{#approved}}badge-success{{/approved}}
+                            {{#reproved}}badge-danger{{/reproved}}">
+                                {{state}}
+                            </dd>
+                            <dt>Avance</dt>
+                            <dd>{{progress}}%</dd>
+                            <dt>Tiempo conexion</dt>
+                            <dd>{{hours}} horas</dd>
+                            <dt>Promedio</dt>
+                            <dd>{{average}}</dd>
+                        </div>
+                    </dl>
+                </div>
+            </div>
+
+            <form action="{{massive_attendanceurl}}" method="post">
+                <input type="hidden" name="studentid" value="{{id}}">
+                <div class="card">
+                    <div class="card-header hstack hstack-sm gap-3">
+                        <h2>Clases</h2>
+                        <input type="submit" class="btn btn-outline-success" value="Guardar">
+                        <a href="{{studentdetailurl}}&id={{id}}" class="btn btn-outline-danger">Cancelar</a>
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-striped table-hover table-responsive-sm">
+                            <thead>
+                                <tr>
+                                    <th>Asistio</th>
+                                    <th>Nombre</th>
+                                    <th>Fecha</th>
+                                    <th>Duracion</th>
+                                    <th>Presente</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                    {{#lessons}}
+                                        <tr>
+                                            <td>
+                                                <input type="checkbox" name="lesson_{{id}}" class="form-switch" {{#assist_check}}checked{{/assist_check}}>
+                                            </td>
+                                            <td>{{code}}</td>
+                                            <td>{{date}}</td>
+                                            <td>{{duration}} minutos</td>
+                                            <td>{{assist}}</td>
+                                        </tr>
+                                    {{/lessons}}
+                            </tbody>
+                        </table>
+                        <div class="hstack hstack-sm gap-3">
+                            <input type="submit" class="btn btn-outline-success" value="Guardar">
+                            <a href="{{studentdetailurl}}&id={{id}}" class="btn btn-outline-danger">Cancelar</a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        {{/student}}
+    {{/ content}}
+{{/ block_sic/layout}}

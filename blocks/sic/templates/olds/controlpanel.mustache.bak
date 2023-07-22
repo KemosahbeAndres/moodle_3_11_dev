@@ -1,0 +1,633 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template block_sic/detalles
+
+
+    Example context (json):{
+
+    }
+}}
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
+<link rel="stylesheet" href="/blocks/sic/styles.css">
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<span id="templatedata" json="{{template.data}}"></span>
+
+<div id="app">
+    <navigation-component tab="{{template.tab}}"></navigation-component>
+    <main-component tab="{{template.tab}}"></main-component>
+    <h3>{{this.content.tab}}</h3>
+</div>
+
+<nav>
+    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+        <button class="nav-link {{#tabcourse}}selected active{{/tabcourse}}" id="nav-course-tab" data-bs-toggle="tab" data-bs-target="#nav-course" type="button" role="tab" aria-controls="nav-course" aria-selected="{{#tabcourse}}true{{/tabcourse}}{{^tabcourse}}false{{/tabcourse}}">Curso</button>
+        <button class="nav-link {{#tabmodules}}selected active{{/tabmodules}}" id="nav-modules-tab" data-bs-toggle="tab" data-bs-target="#nav-modules" type="button" role="tab" aria-controls="nav-modules" aria-selected="{{#tabmodules}}true{{/tabmodules}}{{^tabmodules}}false{{/tabmodules}}">Modulos</button>
+        <button class="nav-link {{#tabsections}}selected active{{/tabsections}}" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="{{#tabsections}}true{{/tabsections}}{{^tabsections}}false{{/tabsections}}">Secciones</button>
+        <button class="nav-link {{#tabactivities}}selected active{{/tabactivities}}" id="nav-activities-tab" data-bs-toggle="tab" data-bs-target="#nav-activities" type="button" role="tab" aria-controls="nav-activities" aria-selected="{{#tabactivities}}true{{/tabactivities}}{{^tabactivities}}false{{/tabactivities}}">Actividades</button>
+        <button class="nav-link {{#tablessons}}selected active{{/tablessons}}" id="nav-lessons-tab" data-bs-toggle="tab" data-bs-target="#nav-lessons" type="button" role="tab" aria-controls="nav-lessons" aria-selected="{{#tablessons}}true{{/tablessons}}{{^tablessons}}false{{/tablessons}}">Clases</button>
+    </div>
+</nav>
+<div class="tab-content p-4" id="nav-tabContent">
+    <div class="tab-pane fade {{#tabcourse}}show active{{/tabcourse}}" id="nav-course" role="tabpanel" aria-labelledby="nav-course-tab" tabindex="1">
+        <h3>Gestor Curso</h3>
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#manager}}
+                <tr>
+                    <td>{{id}}</td>
+                    <td>{{nombre}}</td>
+                </tr>
+                {{/manager}}
+            </tbody>
+        </table>
+        <h3>Profesor</h3>
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Rut</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#teachers}}
+                <tr>
+                    <td>{{id}}</td>
+                    <td>{{nombre}}</td>
+                    <td>{{rut}}</td>
+                </tr>
+                {{/teachers}}
+            </tbody>
+        </table>
+        <div class="grid mb-2">
+            <h3>Alumnos <span class="badge text-bg-primary rounded" style="background-color:var(--primary);color:white;">{{countstudents}}</span></h3>
+            <button type="button" data-bs-toggle="modal" data-bs-target="#studentmodal" class="btn btn-primary rounded">Cambiar estado</button>
+            <div class="modal fade"  id="studentmodal" data-bs-backdrop="static" data-bs-keyboard="false"  tabindex="-1" aria-labelledby="studentmodal" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="ModalStudent">Cambiar estado</h5>
+                            <button type="button" id="resetstatesmodal" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <form id="statechangeform" name="statechangeform" action="/blocks/sic/update_state.php?courseid={{courseid}}" method="post">
+                                <input type="hidden" name="redirect" value="{{redirecturl}}">
+                                <input type="hidden" name="courseid" value="{{courseid}}">
+                                {{#students}}
+                                <div class="input-group my-2">
+                                    <span class="input-group-text">{{nombre}} ({{rut}})</span>
+                                    <select name="codefor{{id}}" class="form-select">
+                                        <option value="3" {{#approved}}selected{{/approved}}>Aprobado</option>
+                                        <option value="2" {{#reproved}}selected{{/reproved}}>Reprobado</option>
+                                        <option value="1" {{#studying}}selected{{/studying}}>Cursando</option>
+                                    </select>
+                                </div>
+                                {{/students}}
+                            </form>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" id="cancelstatesmodal" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                            <button type="submit" form="statechangeform" class="btn btn-primary">Guardar</button>
+                          </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+        <script src="./js/studentstates.js" type="module" defer></script>
+
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Rut</th>
+                    <th>Avance</th>
+                    <th>Tiempo Conexion</th>
+                    <th>Estado</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#students}}
+                <tr>
+                    <td>{{id}}</td>
+                    <td>{{nombre}}</td>
+                    <td>{{rut}}</td>
+                    <td>{{avance}}</td>
+                    <td>{{tiempo}}</td>
+                    <td>{{estado}}</td>
+                </tr>
+                {{/students}}
+            </tbody>
+        </table>
+    </div>
+
+    <div class="tab-pane fade {{#tabmodules}}show active{{/tabmodules}}" id="nav-modules" role="tabpanel" aria-labelledby="nav-modules-tab" tabindex="2">
+        <h3>Curso</h3>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Codigo</th>
+                    <th>Fecha inicio</th>
+                    <th>Fecha fin</th>
+                </tr>
+
+            </thead>
+            <tbody>
+                {{#course}}
+                <tr>
+                    <td>{{id}}</td>
+                    <td>{{codigo}}</td>
+                    <td>{{fechainicio}}</td>
+                    <td>{{fechafin}}</td>
+                </tr>
+                {{/course}}
+            </tbody>
+        </table>
+
+        <div class="grid mb-2">
+            <h3>Modulos</h3>
+            <button type="button" data-bs-toggle="modal" data-bs-target="#modulemodal" class="btn btn-primary rounded">Agregar</button>
+            <button type="button" data-bs-toggle="modal" data-bs-target="#editmodulemodal" class="btn btn-primary rounded"
+            {{^modules}}
+            disabled
+            {{/modules}}
+            >Editar</button>
+            <button type="button" data-bs-toggle="modal" data-bs-target="#deletemodulemodal" class="btn btn-primary rounded"
+            {{^modules}}
+            disabled
+            {{/modules}}
+            >Eliminar</button>
+
+            <div class="modal fade"  id="modulemodal" data-bs-backdrop="static" data-bs-keyboard="false"  tabindex="-1" aria-labelledby="moduleform" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="ModalLabel">Agregar Modulo</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <form id="moduleform" name="moduleform" action="/blocks/sic/create_module.php?courseid={{courseid}}" method="post">
+                                <input type="hidden" name="redirect" value="{{redirecturl}}">
+                                <input type="hidden" name="courseid" value="{{courseid}}">
+                                <div class="input-group my-2">
+                                    <span class="input-group-text">Codigo</span>
+                                    <input class="form-control" type="text" name="codigo"/>
+                                </div>
+                                <div class="input-group my-2">
+                                    <span class="input-group-text">Fecha inicio</span>
+                                    <input type="date" name="startdate" class="form-control" />
+                                </div>
+                                <div class="input-group my-2">
+                                    <span class="input-group-text">Fecha inicio</span>
+                                    <input type="date" name="enddate" class="form-control" />
+                                </div>
+                                <div class="input-group my-2">
+                                    <span class="input-group-text">Actividades Sincronicas</span>
+                                    <input class="form-control" type="number" name="sincronas"/>
+                                </div>
+                                <div class="input-group my-2">
+                                    <span class="input-group-text">Actividades Asincronicas</span>
+                                    <input class="form-control" type="number" name="asincronas"/>
+                                </div>
+                            </form>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                            <button type="submit" form="moduleform" class="btn btn-primary">Guardar</button>
+                          </div>
+                        </div>
+                </div>
+            </div>
+            <div class="modal fade"  id="editmodulemodal" data-bs-backdrop="static" data-bs-keyboard="false"  tabindex="-1" aria-labelledby="editmoduleform" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="ModalEdit">Editar Modulo</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <form id="editmoduleform" name="editmoduleform" action="/blocks/sic/edit_module.php?courseid={{courseid}}" method="post">
+                                <input type="hidden" name="redirect" value="{{redirecturl}}">
+                                <input type="hidden" name="courseid" value="{{courseid}}">
+                                <div class="input-group my-2">
+                                    <span class="input-group-text">Modulo</span>
+                                    <select name="moduleid" id="editmoduleselected" class="form-select">
+                                        <option selected>Selecciona seccion</option>
+                                        {{#modules}}
+                                        <option value="{{id}}">{{id}}: {{codigo}}</option>
+                                        {{/modules}}
+                                    </select>
+                                </div>
+                                <div class="input-group my-2">
+                                    <span class="input-group-text">Codigo</span>
+                                    <input class="form-control" type="text" name="codigo"/>
+                                </div>
+                                <div class="input-group my-2">
+                                    <span class="input-group-text">Fecha inicio</span>
+                                    <input type="date" name="startdate" class="form-control" />
+                                </div>
+                                <div class="input-group my-2">
+                                    <span class="input-group-text">Fecha inicio</span>
+                                    <input type="date" name="enddate" class="form-control" />
+                                </div>
+                                <div class="input-group my-2">
+                                    <span class="input-group-text">Actividades Sincronicas</span>
+                                    <input class="form-control" type="number" name="sincronas"/>
+                                </div>
+                                <div class="input-group my-2">
+                                    <span class="input-group-text">Actividades Asincronicas</span>
+                                    <input class="form-control" type="number" name="asincronas"/>
+                                </div>
+                            </form>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                            <button type="submit" form="editmoduleform" class="btn btn-primary">Guardar</button>
+                          </div>
+                        </div>
+                </div>
+            </div>
+
+            <div class="modal fade"  id="deletemodulemodal" data-bs-backdrop="static" data-bs-keyboard="false"  tabindex="-1" aria-labelledby="editmoduleform" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="ModalEdit">Editar Modulo</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <form id="deletemoduleform" name="deletemoduleform" action="/blocks/sic/delete_module.php?courseid={{courseid}}" method="post">
+                                <input type="hidden" name="redirect" value="{{redirecturl}}">
+                                <input type="hidden" name="courseid" value="{{courseid}}">
+                                <div class="input-group my-2">
+                                    <span class="input-group-text">Modulo</span>
+                                    <select name="moduleid" id="deletemoduleselected" class="form-select">
+                                        <option selected>Selecciona seccion</option>
+                                        {{#modules}}
+                                        <option value="{{id}}">{{id}} -> {{codigo}}</option>
+                                        {{/modules}}
+                                    </select>
+                                </div>
+                            </form>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                            <button type="submit" form="deletemoduleform" class="btn btn-primary">Guardar</button>
+                          </div>
+                        </div>
+                </div>
+            </div>
+
+        </div>
+        <table class="table table-striped table-hover" id="modulestbl">
+            <thead>
+                <tr>
+                    <TH>ID</TH>
+                    <th>Codigo</th>
+                    <th>Fecha inicio</th>
+                    <th>Fecha fin</th>
+                    <th>Sincronas</th>
+                    <th>Asincronas</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#modules}}
+                <tr>
+                    <td>{{id}}</td>
+                    <td>{{codigo}}</td>
+                    <td>{{fechainicio}}</td>
+                    <td>{{fechafin}}</td>
+                    <td>{{sincronas}}</td>
+                    <td>{{asincronas}}</td>
+                </tr>
+                {{/modules}}
+            </tbody>
+        </table>
+        {{^modules}}
+        <div class="alert alert-info" role="alert">
+            No hay modulos registrados.
+        </div>
+        {{/modules}}
+    </div>
+
+    <div class="tab-pane fade {{#tabsections}}show active{{/tabsections}}" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="3">
+        <div class="grid my-2">
+            <h3>Asignadas</h3>
+            <button type="button" data-bs-toggle="modal" data-bs-target="#resectionmodal" class="btn btn-primary rounded"
+            {{^assignedsections}}
+            disabled
+            {{/assignedsections}}
+            >Reasignar</button>
+            <button type="button" data-bs-toggle="modal" data-bs-target="#unsectionmodal" class="btn btn-primary rounded"
+            {{^assignedsections}}
+            disabled
+            {{/assignedsections}}
+            >Quitar Asignacion</button>
+
+            <div class="modal fade"  id="resectionmodal" data-bs-backdrop="static" data-bs-keyboard="false"  tabindex="-1" aria-labelledby="resectionmodal" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="ModalLabel">Reasignar Seccion</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <form id="resectionform" action="/blocks/sic/attach_section.php?courseid={{courseid}}" method="post">
+                                <input type="hidden" name="courseid" value="{{courseid}}">
+                                <div class="input-group my-2">
+                                    <span class="input-group-text">Secciones</span>
+                                    <select name="sectionid" class="form-select">
+                                        <option selected>Selecciona seccion</option>
+                                        {{#assignedsections}}
+                                        <option value="{{id}}">{{id}}: {{nombre}}</option>
+                                        {{/assignedsections}}
+                                    </select>
+                                </div>
+                                <div class="input-group my-2">
+                                    <span class="input-group-text">Modulos</span>
+                                    <select name="moduleid" class="form-select" aria-label="Default select example">
+                                        <option selected>Selecciona modulo</option>
+                                        {{#modules}}
+                                        <option value="{{id}}">{{id}}: {{codigo}}</option>
+                                        {{/modules}}
+                                    </select>
+                                </div>
+                            </form>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                            <button type="submit" form="resectionform" class="btn btn-primary">Guardar</button>
+                          </div>
+                        </div>
+                </div>
+            </div>
+
+            <div class="modal fade"  id="unsectionmodal" data-bs-backdrop="static" data-bs-keyboard="false"  tabindex="-1" aria-labelledby="unsectionmodal" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="ModalLabel">Desasignar Seccion</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <form id="unsectionform" action="/blocks/sic/dettach_section.php?courseid={{courseid}}" method="post">
+                                <input type="hidden" name="courseid" value="{{courseid}}">
+                                <div class="input-group my-2">
+                                    <span class="input-group-text">Secciones</span>
+                                    <select name="sectionid" class="form-select">
+                                        <option selected>Selecciona seccion</option>
+                                        {{#assignedsections}}
+                                        <option value="{{id}}">{{id}}: {{nombre}}</option>
+                                        {{/assignedsections}}
+                                    </select>
+                                </div>
+                            </form>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                            <button type="submit" form="unsectionform" class="btn btn-primary">Quitar</button>
+                          </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Actividades</th>
+                    <th>Modulo</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#assignedsections}}
+                <tr>
+                    <td>{{id}}</td>
+                    <td>{{nombre}}</td>
+                    <td>{{actividades}}</td>
+                    <td>{{module}}</td>
+                </tr>
+                {{/assignedsections}}
+            </tbody>
+        </table>
+        {{^assignedsections}}
+        <div class="alert alert-info" role="alert">
+            No hay secciones asignadas.
+        </div>
+        {{/assignedsections}}
+
+        <div class="grid mb-2">
+            <h3>Sin Asignar</h3>
+
+            <button type="button" data-bs-toggle="modal" data-bs-target="#sectionmodal" class="btn btn-primary rounded"
+            {{^unassignedsections}}
+            disabled
+            {{/unassignedsections}}
+            >Asignar</button>
+
+            <div class="modal fade"  id="sectionmodal" data-bs-backdrop="static" data-bs-keyboard="false"  tabindex="-1" aria-labelledby="sectionmodal" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="ModalLabel">Asignar Seccion</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <form id="sectionform" action="/blocks/sic/attach_section.php?courseid={{courseid}}" method="post">
+                                <input type="hidden" name="courseid" value="{{courseid}}">
+                                <div class="input-group my-2">
+                                    <span class="input-group-text">Secciones</span>
+                                    <select name="sectionid" class="form-select">
+                                        <option selected>Selecciona seccion</option>
+                                        {{#unassignedsections}}
+                                        <option value="{{id}}">{{id}}: {{nombre}}</option>
+                                        {{/unassignedsections}}
+                                    </select>
+                                </div>
+                                <div class="input-group my-2">
+                                    <span class="input-group-text">Modulos</span>
+                                    <select name="moduleid" class="form-select" aria-label="Default select example">
+                                        <option selected>Selecciona modulo</option>
+                                        {{#modules}}
+                                        <option value="{{id}}">{{id}}: {{codigo}}</option>
+                                        {{/modules}}
+                                    </select>
+                                </div>
+                            </form>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                            <button type="submit" form="sectionform" class="btn btn-primary">Asignar</button>
+                          </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Actividades</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#unassignedsections}}
+                <tr>
+                    <td>{{id}}</td>
+                    <td>{{nombre}}</td>
+                    <td>{{actividades}}</td>
+                </tr>
+                {{/unassignedsections}}
+            </tbody>
+        </table>
+        {{^unassignedsections}}
+        <div class="alert alert-info" role="alert">
+            No hay secciones sin asignar.
+        </div>
+        {{/unassignedsections}}
+    </div>
+
+    <div class="tab-pane fade {{#tabactivities}}show active{{/tabactivities}}" id="nav-activities" role="tabpanel" aria-labelledby="nav-activities-tab" tabindex="4">
+        <h3>Actividades</h3>
+
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Obligatoria</th>
+                    <th>Seccion</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#activities}}
+                <tr>
+                    <td>{{id}}</td>
+                    <td>{{nombre}}</td>
+                    <td>{{#obligatoria}}Si{{/obligatoria}}{{^obligatoria}}No{{/obligatoria}}</td>
+                    <td>{{seccion}}</td>
+                </tr>
+                {{/activities}}
+            </tbody>
+        </table>
+
+    </div>
+
+    <div class="tab-pane fade {{#tablessons}}show active{{/tablessons}}" id="nav-lessons" role="tabpanel" aria-labelledby="nav-lessons-tab" tabindex="5">
+        <div class="grid mb-2">
+            <h3>Clases</h3>
+            <button type="button" data-bs-toggle="modal" data-bs-target="#lessonmodal" class="btn btn-primary rounded">Nueva clase</button>
+
+            <div class="modal fade"  id="lessonmodal" data-bs-backdrop="static" data-bs-keyboard="false"  tabindex="-1" aria-labelledby="lessonmodal" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="ModalLabel">Nueva Clase</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <form id="lessonform" action="/blocks/sic/attach_lesson.php?courseid={{courseid}}" method="post">
+                                <input type="hidden" name="courseid" value="{{courseid}}">
+                                <div class="input-group my-2">
+                                    <span class="input-group-text">Modulos</span>
+                                    <select name="moduleid" class="form-select">
+                                        <option selected>Selecciona un modulo</option>
+                                        {{#modules}}
+                                        <option value="{{id}}">{{id}} -> {{codigo}}</option>
+                                        {{/modules}}
+                                    </select>
+                                </div>
+                                <div class="input-group my-2">
+                                    <span class="input-group-text">Nombre</span>
+                                    <input type="text" class="form-control" name="name">
+                                </div>
+                                <div class="input-group my-2">
+                                    <span class="input-group-text">Duracion (Horas)</span>
+                                    <input type="number" class="form-control" name="duration">
+                                </div>
+                                <div class="input-group my-2">
+                                    <span class="input-group-text">Fecha</span>
+                                    <input class="form-control" type="date" name="date">
+                                </div>
+                            </form>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                            <button type="submit" form="lessonform" class="btn btn-primary">Asignar</button>
+                          </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+
+        {{^modules}}
+        {{^lessons}}
+        <div class="alert alert-info" role="alert">
+            No hay Modulos registrados.
+        </div>
+        {{/lessons}}
+        {{/modules}}
+        {{#modules}}
+        <h4 class="mt-2">Modulo: {{codigo}}</h4>
+        {{^lessons}}
+        <div class="alert alert-info" role="alert">
+            No hay clases registradas.
+        </div>
+        {{/lessons}}
+        {{#lessons}}
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Fecha</th>
+                    <th>Duracion</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td>{{id}}</td>
+                    <td>{{nombre}}</td>
+                    <td>{{fecha}}</td>
+                    <td>{{duracion}} horas</td>
+                </tr>
+            </tbody>
+        </table>
+        {{/lessons}}
+        {{/modules}}
+    </div>
+
+</div>
+
+<script src="./js/modulesedit.js" type="module"></script>
+
+<script src="./js/vueapp.js" type="module"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>

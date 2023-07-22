@@ -1,0 +1,113 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template block_sic/detalles
+
+
+    Example context (json):{
+
+    }
+}}
+{{< block_sic/layout}}
+    {{$ content}}
+        {{#response}}
+            <div class="card">
+                <div class="card-header hstack hstack-sm gap-3">
+                    <h2>Datos de Registro</h2>
+                </div>
+                <div class="card-body">
+                    <dl class="row">
+                        <div class="col-md-6">
+                            <dt>ID Proceso</dt>
+                            <dd>{{id_proceso}}</dd>
+                            <dt>Fecha</dt>
+                            <dd>{{#format}}{{fecha}}{{/format}}</dd>
+                        </div>
+                        <div class="col-md-6">
+                            <dt>Errores</dt>
+                            <dd>{{errores}}</dd>
+                            <dt>Mensaje</dt>
+                            <dd>{{respuesta_SIC}}{{^respuesta_SIC}}-{{/respuesta_SIC}}</dd>
+                        </div>
+                    </dl>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <h2>Errores de Registro</h2>
+                </div>
+                <div class="card-body">
+                    <table class="table table-striped table-hover table-responsive-sm">
+                        <thead>
+                            <tr>
+                                <th>Rut Alumno</th>
+                                <th>Codigo Error</th>
+                                <th>Mensaje</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#errors}}
+                                <tr>
+                                    <td>{{alumno.rutAlumno}}-{{alumno.dvAlumno}}</td>
+                                    <td>{{codigo}}</td>
+                                    <td>{{mensaje}}</td>
+                                </tr>
+                            {{/errors}}
+                        </tbody>
+                    </table>
+                    {{^errors}}
+                        <div class="alert alert-warning">No hay errores registrados!</div>
+                    {{/errors}}
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <h2>Datos enviados</h2>
+                </div>
+                <div class="card-body">
+                    <table class="table table-striped table-hover table-responsive-sm">
+                        <thead>
+                            <tr>
+                                <th>Fecha</th>
+                                <th>Rut Alumno</th>
+                                <th>Avance</th>
+                                <th>Tiempo Conexion</th>
+                                <th>Estado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#payloads}}
+                                <tr>
+                                    <td>{{fechaEjecucion}}</td>
+                                    <td>{{rutAlumno}}-{{dvAlumno}}</td>
+                                    <td>{{porcentajeAvance}}</td>
+                                    <td>{{#time_format}}{{tiempoConectividad}}{{/time_format}}</td>
+                                    <td>
+                                        <p class="badge badge-primary">{{#real_state}}{{estado}}{{/real_state}}</p>
+                                    </td>
+                                </tr>
+                            {{/payloads}}
+                        </tbody>
+                    </table>
+                    {{^payloads}}
+                        <div class="alert alert-warning">No hay datos registrados!</div>
+                    {{/payloads}}
+                </div>
+            </div>
+        {{/response}}
+    {{/ content}}
+{{/ block_sic/layout}}
